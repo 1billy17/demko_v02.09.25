@@ -1,0 +1,16 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="demkobibl.AuthWindow"
+        Title="AuthWindow">
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="10">
+        <TextBox Watermark="Почта" Width="250" Height="45" x:Name="LoginTextBox" VerticalContentAlignment="Center"/>
+        <TextBox Watermark="Пароль" Width="250" Height="45" x:Name="PasswordTextBox" VerticalContentAlignment="Center"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="15">
+            <CheckBox Content="Показать пароль" HorizontalAlignment="Right" Name="ShowPasswordCheckBox" Checked="ShowPasswordCheckBox_OnCheck" Unchecked="ShowPasswordCheckBox_OnUncheck"/>
+            <Button Click="AuthButton_OnClick" Content="Вход" Height="35" Width="75" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

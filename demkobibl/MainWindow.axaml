@@ -1,0 +1,50 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="demkobibl.MainWindow"
+        x:CompileBindings="False"
+        Title="demkobibl">
+    <DockPanel>
+        <Grid DockPanel.Dock="Top" Height="75">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="10">
+                <TextBox x:Name="SearchTextBox" TextChanged="SearchTextBox_OnTextChanged" Watermark="Поиск" Width="165" Height="45"/>
+                <ComboBox x:Name="AuthorComboBox" Width="165" Height="45" VerticalAlignment="Center" SelectionChanged="AuthorComboBox_OnSelectionChanged"/>
+                <ComboBox x:Name="GenreComboBox" Width="165" Height="45" VerticalAlignment="Center" SelectionChanged="GenreComboBox_OnSelectionChanged"/>
+            </StackPanel>
+            
+            <Button Grid.Column="2" Content="Вход" FontSize="16" Width="75" Height="45" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="20,0" Click="AuthWindow_OnClick"/>
+        </Grid>
+        
+        <Border>
+            <ListBox x:Name="BooksListBox" Margin="10">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="4"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+                
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderThickness="1" Padding="5" Margin="5" Width="250">
+                            <StackPanel>
+                                <Image Source="{Binding Image}" Width="235" Height="335" Stretch="UniformToFill"/>
+                                <TextBlock Text="{Binding Title}" FontSize="18" FontWeight="Bold" TextAlignment="Left"/>
+                                <TextBlock Text="{Binding Author}" FontSize="16" TextAlignment="Left"/>
+                                <TextBlock Text="{Binding PublishYear}" FontSize="16" TextAlignment="Left"/>
+                                <TextBlock Text="{Binding GenresDisplay}" FontSize="16" TextAlignment="Left"/>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Border>
+    </DockPanel>
+</Window>
