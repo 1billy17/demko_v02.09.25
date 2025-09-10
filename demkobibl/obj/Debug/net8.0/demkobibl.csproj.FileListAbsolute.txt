@@ -146,3 +146,4 @@
 /Users/feitanportor/dev/C#/demkobibl/demkobibl/obj/Debug/net8.0/demkobibl.csproj.Up2Date
 /Users/feitanportor/dev/C#/demkobibl/demkobibl/obj/Debug/net8.0/demkobibl.genruntimeconfig.cache
 /Users/feitanportor/dev/C#/demkobibl/demkobibl/obj/Debug/net8.0/ref/demkobibl.dll
+/Users/feitanportor/dev/C#/demkobibl/demkobibl/obj/Debug/net8.0/demkobibl.sourcelink.json

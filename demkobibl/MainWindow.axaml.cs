@@ -15,10 +15,13 @@ public partial class MainWindow : Window
 {
     ObservableCollection<BookPresenter> books = new ObservableCollection<BookPresenter>();
     List<BookPresenter> dataSourseBooks;
+
+    public Client client;
     
     public MainWindow()
     {
         InitializeComponent();
+        
         using var ctx = new DemkoBiblContext();
         dataSourseBooks = ctx.BooksCatalogs
             .Include(i => i.Author)
@@ -108,6 +111,31 @@ public partial class MainWindow : Window
         return message.Contains(search);
     }
     
+    public async void AuthWindow_OnClick(object? sender, RoutedEventArgs e)
+    {
+        AuthWindow authWindow = new AuthWindow();
+        client = await authWindow.ShowDialog<Client>(this);
+
+        AuthButton.IsVisible = false;
+        CheckClientBooksButton.IsVisible = true;
+        LogoutButton.IsVisible = true;
+    }
+    
+    public void CheckClientBooksButton_OnClick(object? sender, RoutedEventArgs e)
+    {
+        BlankWindow blankWindow = new BlankWindow();
+        blankWindow.ShowDialog(this);
+    }
+    
+    public void LogoutButton_OnClick(object? sender, RoutedEventArgs e)
+    {
+        client = null;
+        
+        AuthButton.IsVisible = true;
+        LogoutButton.IsVisible = false;
+        CheckClientBooksButton.IsVisible = false;
+    }
+    
     public void AuthorComboBox_OnSelectionChanged(object? sender, RoutedEventArgs e)
     {
         DisplayServices();
@@ -121,11 +149,5 @@ public partial class MainWindow : Window
     private void SearchTextBox_OnTextChanged(object? sender, TextChangedEventArgs e)
     {
         DisplayServices();
-    }
-    
-    public void AuthWindow_OnClick(object? sender, RoutedEventArgs e)
-    {
-        AuthWindow authWindowButton = new AuthWindow();
-        authWindowButton.ShowDialog(this);
     }
 }

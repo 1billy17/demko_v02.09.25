@@ -39,8 +39,10 @@ public partial class AuthWindow : Window
                 switch (employee.PositionId)
                 {
                     case 1:
+                        new LibrarianWindow(employee).ShowDialog(this);
                         break;
                     case 2:
+                        new AdminWindow(employee).ShowDialog(this);
                         break;
                     default:
                         new BlankWindow().ShowDialog(this);
@@ -54,7 +56,7 @@ public partial class AuthWindow : Window
         {
             if (client.Password == password)
             {
-                
+                Close(client);
             }
         }
     }
