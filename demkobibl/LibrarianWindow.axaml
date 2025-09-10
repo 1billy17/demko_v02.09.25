@@ -25,6 +25,9 @@
                         <Button x:Name="GiveBookButton" Height="80" Width="350" BorderThickness="2" Click="GiveBookButton_OnClick">
                             <TextBlock Text="Выдать книгу читателю" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Button>
+                        <Button x:Name="AddCatalogBookButton" Height="80" Width="350" BorderThickness="2" Click="AddCatalogBookButton_OnClick">
+                            <TextBlock Text="Добавить книгу в каталог" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Button>
                     </StackPanel>
                 </Grid>
             </Grid>

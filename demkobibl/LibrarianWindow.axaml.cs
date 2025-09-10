@@ -39,4 +39,10 @@ public partial class LibrarianWindow : Window
         GiveBookWindow giveBookWindow = new GiveBookWindow();
         giveBookWindow.ShowDialog(this);
     }
+    
+    private void AddCatalogBookButton_OnClick(object? sender, RoutedEventArgs e)
+    {
+        AddCatalogBook addCatalogBook = new AddCatalogBook();
+        addCatalogBook.ShowDialog(this);
+    }
 }

@@ -21,30 +21,8 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-        
-        using var ctx = new DemkoBiblContext();
-        dataSourseBooks = ctx.BooksCatalogs
-            .Include(i => i.Author)
-            .Include(i => i.BooksGenres)
-            .ThenInclude(ig => ig.Genre)
-            .Select(i => new BookPresenter
-            {
-                Id = i.Id,
-                Title = i.Title,
-                Author = i.Author != null 
-                    ? i.Author.Firstname + " " + i.Author.Lastname 
-                    : "Неизвестен",
-                PublishYear = i.PublishYear ?? 0,
-                Genres = i.BooksGenres
-                    .Select(ig => ig.Genre.Title)
-                    .ToList(),
-                ImageBook = Path.Combine(AppContext.BaseDirectory, i.Image ?? string.Empty)
-            }).ToList();
-        
-        AuthorComboBox.ItemsSource = new List<string> { "Все" }.Concat(ctx.Authors.Select(a => a.Firstname + " " + a.Lastname)).ToList();
-        GenreComboBox.ItemsSource = new List<string> { "Все" }.Concat(ctx.Genres.Select(g => g.Title)).ToList();
-        
-        DisplayServices();
+        LoadBooks();
+        this.Activated += (_, _) => LoadBooks();
     }
     
     public class BookPresenter : BooksCatalog
@@ -72,6 +50,31 @@ public partial class MainWindow : Window
                 }
             }
         }
+    }
+    
+    private void LoadBooks()
+    {
+        using var ctx = new DemkoBiblContext();
+        dataSourseBooks = ctx.BooksCatalogs
+            .Include(i => i.Author)
+            .Include(i => i.BooksGenres).ThenInclude(ig => ig.Genre)
+            .Select(i => new BookPresenter
+            {
+                Id = i.Id,
+                Title = i.Title,
+                Author = i.Author != null 
+                    ? i.Author.Firstname + " " + i.Author.Lastname 
+                    : "Неизвестен",
+                PublishYear = i.PublishYear ?? 0,
+                Genres = i.BooksGenres.Select(ig => ig.Genre.Title).ToList(),
+                ImageBook = Path.Combine(AppContext.BaseDirectory, i.Image ?? string.Empty)
+            })
+            .ToList();
+        
+        AuthorComboBox.ItemsSource = new List<string> { "Все" }.Concat(ctx.Authors.Select(a => a.Firstname + " " + a.Lastname)).ToList();
+        GenreComboBox.ItemsSource = new List<string> { "Все" }.Concat(ctx.Genres.Select(g => g.Title)).ToList();
+    
+        DisplayServices();
     }
 
     public void DisplayServices()
