@@ -1,0 +1,16 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="demkobibl.AddLibraryWindow"
+        Title="HistoryWindow">
+    <StackPanel Orientation="Vertical" Spacing="15" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <TextBox Watermark="Название" Width="350" Height="65" x:Name="NameLibraryTextBox" VerticalContentAlignment="Center"/>
+        <TextBox Watermark="Адрес" Width="350" Height="65" x:Name="AddressLibraryTextBox" VerticalContentAlignment="Center"/>
+        <TextBox Watermark="Телефон" Width="350" Height="65" x:Name="PhoneLibraryTextBox" VerticalContentAlignment="Center"/>
+        <TextBox Watermark="Почта" Width="350" Height="65" x:Name="EmailLibraryTextBox" VerticalContentAlignment="Center"/>
+        <TextBox Watermark="Рабочий график" Width="350" Height="65" x:Name="TimeScheduleLibraryTextBox" VerticalContentAlignment="Center"/>
+        <Button Width="350" Height="30" x:Name="SaveLibraryButton" Content="Сохранить" Click="SaveLibraryButton_OnClick" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
+    </StackPanel>
+</Window>

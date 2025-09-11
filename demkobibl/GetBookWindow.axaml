@@ -5,5 +5,11 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="demkobibl.GetBookWindow"
         Title="GetBookWindow">
-    Welcome to Avalonia!
+    <StackPanel Orientation="Vertical" Spacing="15" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <TextBox Watermark="Код книги" Width="350" Height="65" x:Name="CodeBookTextBox" VerticalContentAlignment="Center"/>
+        <ComboBox Width="350" Height="65" x:Name="BookCatalogComboBox"/>
+        <ComboBox Width="350" Height="65" x:Name="LibraryComboBox"/>
+        <DatePicker Width="350" Height="45" x:Name="DatePicker"/>
+        <Button Width="350" Height="30" x:Name="SaveBookButton" Content="Сохранить" Click="SaveBookCopyButton_OnClick" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
+    </StackPanel>
 </Window>

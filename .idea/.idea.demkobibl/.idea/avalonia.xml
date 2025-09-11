@@ -3,6 +3,20 @@
   <component name="AvaloniaProject">
     <option name="projectPerEditor">
       <map>
+        <entry key="demkobibl/AddAuthorWindow.axaml" value="demkobibl/demkobibl.csproj" />
+        <entry key="demkobibl/AddCatalogBook.axaml" value="demkobibl/demkobibl.csproj" />
+        <entry key="demkobibl/AddCatalogBookWindow.axaml" value="demkobibl/demkobibl.csproj" />
+        <entry key="demkobibl/AddEmployeeWindow.axaml" value="demkobibl/demkobibl.csproj" />
+        <entry key="demkobibl/AddGenreWindow.axaml" value="demkobibl/demkobibl.csproj" />
+        <entry key="demkobibl/AddPublisherWindow.axaml" value="demkobibl/demkobibl.csproj" />
+        <entry key="demkobibl/AdminWindow.axaml" value="demkobibl/demkobibl.csproj" />
+        <entry key="demkobibl/App.axaml" value="demkobibl/demkobibl.csproj" />
+        <entry key="demkobibl/AuthWindow.axaml" value="demkobibl/demkobibl.csproj" />
+        <entry key="demkobibl/BlankWindow.axaml" value="demkobibl/demkobibl.csproj" />
+        <entry key="demkobibl/GetBookWindow.axaml" value="demkobibl/demkobibl.csproj" />
+        <entry key="demkobibl/GiveBookWindow.axaml" value="demkobibl/demkobibl.csproj" />
+        <entry key="demkobibl/HistoryWindow.axaml" value="demkobibl/demkobibl.csproj" />
+        <entry key="demkobibl/LibrarianWindow.axaml" value="demkobibl/demkobibl.csproj" />
         <entry key="demkobibl/MainWindow.axaml" value="demkobibl/demkobibl.csproj" />
       </map>
     </option>

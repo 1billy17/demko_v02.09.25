@@ -18,9 +18,12 @@
                     <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" MaxWidth="350" Spacing="15">
                         <TextBlock x:Name="FioTextBlock" FontSize="18"/>
                         <TextBlock x:Name="RoleTextBlock" FontSize="14"/>
-
-                        <Button x:Name="ViewHistoryButton" Height="80" Width="350" BorderThickness="2" Click="ViewHistoryButton_OnClick">
-                            <TextBlock Text="Посмотреть историю входов" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        
+                        <Button x:Name="AddLibraryButton" Height="80" Width="350" BorderThickness="2" Click="AddLibraryButton_OnClick">
+                            <TextBlock Text="Добавить библиотеку" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Button>
+                        <Button x:Name="AddEmployeeButton" Height="80" Width="350" BorderThickness="2" Click="AddEmployeeButton_OnClick">
+                            <TextBlock Text="Добавить библиотекаря" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Button>
                     </StackPanel>
                 </Grid>

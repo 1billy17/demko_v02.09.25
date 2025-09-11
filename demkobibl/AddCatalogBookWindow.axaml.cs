@@ -12,14 +12,19 @@ using Avalonia.Platform.Storage;
 
 namespace demkobibl;
 
-public partial class AddCatalogBook : Window
+public partial class AddCatalogBookWindow : Window
 {
     public string SelectedImagePath = string.Empty;
     
-    public AddCatalogBook()
+    public AddCatalogBookWindow()
     {
         InitializeComponent();
-        
+        LoadData();
+        this.Activated += (_, _) => LoadData();
+    }
+
+    private void LoadData()
+    {
         using var ctx = new DemkoBiblContext();
         
         AuthorComboBox.ItemsSource = ctx.Authors.Select(a => a.Firstname + " " + a.Lastname).ToList();
@@ -63,11 +68,16 @@ public partial class AddCatalogBook : Window
                 Image = SelectedImagePath
             };
 
-            ctx.BooksCatalogs.Add(book);
-            ctx.SaveChanges();
-
             var selectedGenres = GenresListBox.SelectedItems.Cast<string>().ToList();
 
+            if (selectedGenres == null)
+            {
+                return;
+            }
+            
+            ctx.BooksCatalogs.Add(book);
+            ctx.SaveChanges();
+            
             foreach (var genreTitle in selectedGenres)
             {
                 var genre = ctx.Genres.FirstOrDefault(g => g.Title == genreTitle);
@@ -83,6 +93,8 @@ public partial class AddCatalogBook : Window
             }
 
             ctx.SaveChanges();
+            
+            Close();
         }
     }
 
@@ -130,13 +142,19 @@ public partial class AddCatalogBook : Window
 
     public void AddAuthorButton_OnClick(object? sender, RoutedEventArgs e)
     {
-        BlankWindow blankWindow = new BlankWindow();
-        blankWindow.ShowDialog(this);
+        AddAuthorWindow addAuthorWindow = new AddAuthorWindow();
+        addAuthorWindow.ShowDialog(this);
     }
     
     public void AddGenreButton_OnClick(object? sender, RoutedEventArgs e)
     {
-        BlankWindow blankWindow = new BlankWindow();
-        blankWindow.ShowDialog(this);
+        AddGenreWindow addGenreWindow = new AddGenreWindow();
+        addGenreWindow.ShowDialog(this);
+    }
+    
+    public void AddPublisherButton_OnClick(object? sender, RoutedEventArgs e)
+    {
+        AddPublisherWindow addPublisherWindow = new AddPublisherWindow();
+        addPublisherWindow.ShowDialog(this);
     }
 }

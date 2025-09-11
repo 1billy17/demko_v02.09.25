@@ -28,9 +28,15 @@ public partial class AdminWindow : Window
         }
     }
     
-    private void ViewHistoryButton_OnClick(object? sender, RoutedEventArgs e)
+    private void AddLibraryButton_OnClick(object? sender, RoutedEventArgs e)
     {
-        HistoryWindow historyWindow = new HistoryWindow();
-        historyWindow.ShowDialog(this);
+        AddLibraryWindow addLibraryWindow = new AddLibraryWindow();
+        addLibraryWindow.ShowDialog(this);
+    }
+    
+    private void AddEmployeeButton_OnClick(object? sender, RoutedEventArgs e)
+    {
+        AddEmployeeWindow addEmployeeWindow = new AddEmployeeWindow();
+        addEmployeeWindow.ShowDialog(this);
     }
 }

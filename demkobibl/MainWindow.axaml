@@ -15,7 +15,7 @@
             </Grid.ColumnDefinitions>
             
             <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="10">
-                <TextBox x:Name="SearchTextBox" TextChanged="SearchTextBox_OnTextChanged" Watermark="Поиск" Width="165" Height="45"/>
+                <TextBox x:Name="SearchTextBox" TextChanged="SearchTextBox_OnTextChanged" Watermark="Поиск" Width="165" Height="45" VerticalContentAlignment="Center"/>
                 <ComboBox x:Name="AuthorComboBox" Width="165" Height="45" VerticalAlignment="Center" SelectionChanged="AuthorComboBox_OnSelectionChanged"/>
                 <ComboBox x:Name="GenreComboBox" Width="165" Height="45" VerticalAlignment="Center" SelectionChanged="GenreComboBox_OnSelectionChanged"/>
             </StackPanel>

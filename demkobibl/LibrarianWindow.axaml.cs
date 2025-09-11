@@ -42,7 +42,13 @@ public partial class LibrarianWindow : Window
     
     private void AddCatalogBookButton_OnClick(object? sender, RoutedEventArgs e)
     {
-        AddCatalogBook addCatalogBook = new AddCatalogBook();
+        AddCatalogBookWindow addCatalogBook = new AddCatalogBookWindow();
         addCatalogBook.ShowDialog(this);
+    }
+    
+    private void AddClientButton_OnClick(object? sender, RoutedEventArgs e)
+    {
+        AddClientWindow addClientWindow = new AddClientWindow();
+        addClientWindow.ShowDialog(this);
     }
 }

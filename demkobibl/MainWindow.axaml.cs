@@ -119,9 +119,12 @@ public partial class MainWindow : Window
         AuthWindow authWindow = new AuthWindow();
         client = await authWindow.ShowDialog<Client>(this);
 
-        AuthButton.IsVisible = false;
-        CheckClientBooksButton.IsVisible = true;
-        LogoutButton.IsVisible = true;
+        if (client != null)
+        {
+            AuthButton.IsVisible = false;
+            CheckClientBooksButton.IsVisible = true;
+            LogoutButton.IsVisible = true;
+        }
     }
     
     public void CheckClientBooksButton_OnClick(object? sender, RoutedEventArgs e)

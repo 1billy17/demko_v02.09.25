@@ -1,0 +1,25 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="demkobibl.AddEmployeeWindow"
+        Title="AddEmployeeWindow">
+    <Grid ColumnDefinitions="1*, 1*" Margin="20">
+        <StackPanel Grid.Column="0" Orientation="Vertical" Spacing="10" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,20,0">
+            <TextBox Watermark="Имя" Width="300" Height="55" x:Name="FirstnameEmployeeTextBox" VerticalContentAlignment="Center"/>
+            <TextBox Watermark="Фамилия" Width="300" Height="55" x:Name="LastnameEmployeeTextBox" VerticalContentAlignment="Center"/>
+            <TextBox Watermark="Отчество" Width="300" Height="55" x:Name="PatronymicEmployeeTextBox" VerticalContentAlignment="Center"/>
+            <ComboBox Width="300" Height="55" x:Name="LibraryComboBox"/>
+            <Button Width="300" Height="30" x:Name="AddLibraryButton" Content="Добавить библиотеку" Click="AddLibraryButton_OnClick" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <TextBox Watermark="Почта" Width="300" Height="55" x:Name="EmailTextBox" VerticalContentAlignment="Center"/>
+            <TextBox Watermark="Пароль" Width="300" Height="55" x:Name="PasswordTextBox" VerticalContentAlignment="Center"/>
+            <Button Width="300" Height="30" x:Name="SaveEmployeeButton" Content="Сохранить" Click="SaveEmployeeButton_OnClick" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Column="1" Orientation="Vertical" Spacing="10" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0">
+            <Image Width="350" Height="420" x:Name="BookImage"/>
+            <Button Width="300" Height="30" x:Name="SelectImageButton" Click="SelectImageButton_OnClick" Content="Выбрать фото" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</Window>

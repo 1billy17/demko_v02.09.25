@@ -1,0 +1,18 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="demkobibl.AddClientWindow"
+        Title="AddClientWindow">
+    <StackPanel Orientation="Vertical" Spacing="15" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <TextBox Watermark="Имя" Width="350" Height="65" x:Name="FirstnameClientTextBox" VerticalContentAlignment="Center"/>
+        <TextBox Watermark="Фамилия" Width="350" Height="65" x:Name="LastnameClientTextBox" VerticalContentAlignment="Center"/>
+        <TextBox Watermark="Отчество" Width="350" Height="65" x:Name="PatronymicClientTextBox" VerticalContentAlignment="Center"/>
+        <TextBox Watermark="Номер телефона" Width="350" Height="65" x:Name="PhoneTextBox" VerticalContentAlignment="Center"/>
+        <DatePicker Width="350" Height="65" x:Name="DatePicker"/>
+        <TextBox Watermark="Почта" Width="350" Height="65" x:Name="EmailTextBox" VerticalContentAlignment="Center"/>
+        <TextBox Watermark="Пароль" Width="350" Height="65" x:Name="PasswordTextBox" VerticalContentAlignment="Center"/>
+        <Button Width="350" Height="30" x:Name="SaveClientButton" Content="Сохранить" Click="SaveClientButton_OnClick" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
+    </StackPanel>
+</Window>
