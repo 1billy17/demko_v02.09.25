@@ -11,9 +11,15 @@ namespace demkobibl;
 
 public partial class LibrarianWindow : Window
 {
+    
+    private Employee _employee;
+    
     public LibrarianWindow(Employee employee)
     {
         InitializeComponent();
+        
+        _employee = employee;
+        
         FioTextBlock.Text = employee.Lastname + " " + employee.Firstname + " " + employee.Patronymic;
         RoleTextBlock.Text = employee.Position.Title;
 
@@ -36,7 +42,7 @@ public partial class LibrarianWindow : Window
     
     private void GiveBookButton_OnClick(object? sender, RoutedEventArgs e)
     {
-        GiveBookWindow giveBookWindow = new GiveBookWindow();
+        GiveBookWindow giveBookWindow = new GiveBookWindow(_employee);
         giveBookWindow.ShowDialog(this);
     }
     
@@ -50,5 +56,11 @@ public partial class LibrarianWindow : Window
     {
         AddClientWindow addClientWindow = new AddClientWindow();
         addClientWindow.ShowDialog(this);
+    }
+    
+    private void ReturnBookButton_OnClick(object? sender, RoutedEventArgs e)
+    {
+        ReturnBookWindow returnBookWindow = new ReturnBookWindow(_employee);
+        returnBookWindow.ShowDialog(this);
     }
 }

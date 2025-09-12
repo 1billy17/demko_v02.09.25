@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("demkobibl")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+01fd5ab6dd0d15bbcc59d4a3de68c0e967d1ab9e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1fdff0b0b7205847c29dba25c7f557d28110da02")]
 [assembly: System.Reflection.AssemblyProductAttribute("demkobibl")]
 [assembly: System.Reflection.AssemblyTitleAttribute("demkobibl")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

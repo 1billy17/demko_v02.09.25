@@ -20,7 +20,7 @@
                         <TextBlock x:Name="RoleTextBlock" FontSize="14"/>
 
                         <Button x:Name="GetBookButton" Height="80" Width="350" BorderThickness="2" Click="GetBookButton_OnClick">
-                            <TextBlock Text="Принять книгу" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="Принять в библиотеку книгу" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Button>
                         <Button x:Name="GiveBookButton" Height="80" Width="350" BorderThickness="2" Click="GiveBookButton_OnClick">
                             <TextBlock Text="Выдать книгу читателю" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -29,7 +29,10 @@
                             <TextBlock Text="Добавить книгу в каталог" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Button>
                         <Button x:Name="AddClientButton" Height="80" Width="350" BorderThickness="2" Click="AddClientButton_OnClick">
-                            <TextBlock Text="Добавить книгу в каталог" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="Добавить клиента" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Button>
+                        <Button x:Name="ReturnBookButton" Height="80" Width="350" BorderThickness="2" Click="ReturnBookButton_OnClick">
+                            <TextBlock Text="Забрать книгу у читателя" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Button>
                     </StackPanel>
                 </Grid>
