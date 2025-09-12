@@ -48,6 +48,11 @@
                         </Border>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
+                <ListBox.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Посмотреть книгу" Click="ShowBookButton_OnClick"/>
+                    </ContextMenu>
+                </ListBox.ContextMenu>
             </ListBox>
         </Border>
     </DockPanel>

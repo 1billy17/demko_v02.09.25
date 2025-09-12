@@ -54,6 +54,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [/Users/feitanportor/dev/C\#/demkobibl/demkobibl/BlankWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/Users/feitanportor/dev/C\#/demkobibl/demkobibl/CheckClientBooksWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/Users/feitanportor/dev/C\#/demkobibl/demkobibl/GetBookWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
@@ -67,4 +70,7 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/Users/feitanportor/dev/C\#/demkobibl/demkobibl/ReturnBookWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/Users/feitanportor/dev/C\#/demkobibl/demkobibl/ShowBookWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

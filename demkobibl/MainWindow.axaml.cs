@@ -29,6 +29,7 @@ public partial class MainWindow : Window
     {
         public string Title { get; set; }
         public string Author { get; set; }
+        public string Publisher { get; set; }
         public int PublishYear { get; set; }
         public List<string> Genres { get; set; }
         
@@ -57,6 +58,7 @@ public partial class MainWindow : Window
         using var ctx = new DemkoBiblContext();
         dataSourseBooks = ctx.BooksCatalogs
             .Include(i => i.Author)
+            .Include(i => i.Publisher)
             .Include(i => i.BooksGenres).ThenInclude(ig => ig.Genre)
             .Select(i => new BookPresenter
             {
@@ -67,7 +69,10 @@ public partial class MainWindow : Window
                     : "Неизвестен",
                 PublishYear = i.PublishYear ?? 0,
                 Genres = i.BooksGenres.Select(ig => ig.Genre.Title).ToList(),
-                ImageBook = Path.Combine(AppContext.BaseDirectory, i.Image ?? string.Empty)
+                ImageBook = Path.Combine(AppContext.BaseDirectory, i.Image ?? string.Empty),
+                Description = i.Description,
+                Pages = i.Pages,
+                Publisher = i.Publisher.Title
             })
             .ToList();
         
@@ -129,8 +134,17 @@ public partial class MainWindow : Window
     
     public void CheckClientBooksButton_OnClick(object? sender, RoutedEventArgs e)
     {
-        BlankWindow blankWindow = new BlankWindow();
-        blankWindow.ShowDialog(this);
+        CheckClientBooksWindow checkClientBooksWindow = new CheckClientBooksWindow(client);
+        checkClientBooksWindow.ShowDialog(this);
+    }
+    
+    public void ShowBookButton_OnClick(object? sender, RoutedEventArgs e)
+    {
+        if (BooksListBox.SelectedItem is BookPresenter selectedBook)
+        {
+            var showBookWindow = new ShowBookWindow(selectedBook);
+            showBookWindow.ShowDialog(this);
+        }
     }
     
     public void LogoutButton_OnClick(object? sender, RoutedEventArgs e)

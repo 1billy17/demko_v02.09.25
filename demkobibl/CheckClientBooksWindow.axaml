@@ -1,0 +1,31 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="demkobibl.CheckClientBooksWindow"
+        x:CompileBindings="False"
+        Title="CheckClientBooksWindow">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Height="75" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+           <Button x:Name="BackButton" Content="Обратно" Width="100" Height="45" Click="BackButton_OnClick" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/> 
+        </StackPanel>
+        <Border>
+            <ListBox x:Name="BooksCopiesClientsListBox" Margin="10">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="1" Margin="5" Padding="5">
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="10">
+                                <TextBlock Text="{Binding ClientName}"/>
+                                <TextBlock Text="{Binding BookCopyName}"/>
+                                <TextBlock Text="{Binding IssueDate, StringFormat=yyyy-MM-dd}"/>
+                                <TextBlock Text="{Binding EndDate, StringFormat=yyyy-MM-dd}"/>
+                                <TextBlock Text="{Binding ReturnDate, StringFormat=yyyy-MM-dd}"/>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Border>
+    </DockPanel>
+</Window>

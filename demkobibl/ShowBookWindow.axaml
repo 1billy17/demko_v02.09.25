@@ -1,0 +1,28 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="demkobibl.ShowBookWindow"
+        Title="ShowBookWindow">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Height="75" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="BackButton" Content="Обратно" Width="100" Height="45" Click="BackButton_OnClick" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/> 
+        </StackPanel>
+        
+        <Grid ColumnDefinitions="1*, 1*" Margin="20">
+            <Border Grid.Column="0" BorderThickness="1" Padding="5" Margin="0,0,20,0">
+                <Image Width="350" Height="500" x:Name="BookImage" Stretch="UniformToFill"/>
+            </Border>
+            
+            <StackPanel Grid.Column="1" Orientation="Vertical" Spacing="10" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0">
+                <TextBlock x:Name="TitleTextBox" FontSize="32" FontWeight="Bold" TextWrapping="Wrap"/>
+                <TextBlock x:Name="AuthorTextBox" FontSize="18"/>
+                <TextBlock x:Name="PublisherTextBox" FontSize="18"/>
+                <TextBlock x:Name="PublishYearTextBox" FontSize="18"/>
+                <TextBlock x:Name="PagesTextBox" FontSize="18"/>
+                <TextBlock x:Name="DescriptionTextBox" FontSize="16" TextWrapping="Wrap"/>
+            </StackPanel>
+        </Grid>
+    </DockPanel>
+</Window>

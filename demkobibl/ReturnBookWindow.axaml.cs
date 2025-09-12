@@ -18,8 +18,8 @@ namespace demkobibl;
 public partial class ReturnBookWindow : Window
 {
     
-    ObservableCollection<ClientsBooksCopyPresenter> clientBooksCopies = new ObservableCollection<ClientsBooksCopyPresenter>();
-    List<ClientsBooksCopyPresenter> dataSourseClientsBooksCopies;
+    ObservableCollection<ClientsBooksCopyForLibrarianPresenter> clientBooksCopies = new ObservableCollection<ClientsBooksCopyForLibrarianPresenter>();
+    List<ClientsBooksCopyForLibrarianPresenter> dataSourseClientsBooksCopies;
     
     private Employee? _employee;
     
@@ -37,7 +37,7 @@ public partial class ReturnBookWindow : Window
         LoadData();
     }
     
-    public class ClientsBooksCopyPresenter : ClientsBooksCopy
+    public class ClientsBooksCopyForLibrarianPresenter : ClientsBooksCopy
     {
         public string ClientEmail { get; set; }
         public string BookCopyCode { get; set; }
@@ -56,7 +56,7 @@ public partial class ReturnBookWindow : Window
             .Include(it => it.BookCopies)
             .Where(it => it.EmployeeId == _employee.Id)
             .Where(it => it.BookCopies.Status == "Выдана")
-            .Select(it => new ClientsBooksCopyPresenter
+            .Select(it => new ClientsBooksCopyForLibrarianPresenter
             {
                 Id = it.Id,
                 ClientEmail = it.Client.Email,
@@ -86,7 +86,7 @@ public partial class ReturnBookWindow : Window
     {
         using var ctx = new DemkoBiblContext();
 
-        var selectedItem = BooksCopiesClientsListBox.SelectedItem as ClientsBooksCopyPresenter;
+        var selectedItem = BooksCopiesClientsListBox.SelectedItem as ClientsBooksCopyForLibrarianPresenter;
         if (selectedItem == null) return;
         
         var returnBookCopy = ctx.ClientsBooksCopies
